@@ -1,5 +1,5 @@
 var fs = require('fs');
-var path = require('path')
+var path = require('path');
 
 var pathName = process.argv[2];
 
@@ -12,7 +12,7 @@ var pathName = process.argv[2];
 
 fs.readdir(pathName, function(err, files){
   files.forEach(function (file){
-    if (path.extname(file) ==='.' + process.argv[3])
+    if (path.extname(file) === '.' + process.argv[3])
       console.log(file)
   })
 });
