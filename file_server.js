@@ -6,17 +6,12 @@ var readableStream = fs.createReadStream(file);
 
 
 
-var server = http.createServer(function(req, res){
+var server = http.createServer(function (req, res) {
   readableStream.pipe(res);
 });
+
 server.listen(process.argv[2]);
 
-// var server = http.createServer();
-// server.on('request', function(request, response) {
-
-// });
-
-//---------OFFICIAL-ANSWER-----------
 
 // var http = require('http')
 // var fs = require('fs')
