@@ -7,7 +7,9 @@ var readableStream = fs.createReadStream(file);
 
 
 var server = http.createServer(function (req, res) {
-  readableStream.pipe(res);
+  req.pipe(map(function (chunk) {
+    return chunk.toString().split('').reverse().join('')
+  })).pipe(res);
 });
 
 server.listen(process.argv[2]);
